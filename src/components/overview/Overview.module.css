@@ -1,0 +1,14 @@
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  /* flex-flow: nowrap; */
+  flex-wrap: nowrap;
+  height: 100%;
+ padding: 10px;
+}
+
+.item1 {
+  /* flex:0 1 auto; */
+  align-self: center;
+  width: 100%;
+}

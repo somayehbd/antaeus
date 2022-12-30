@@ -1,4 +1,5 @@
 import style from './Layout.module.css'
+import Overview from '../overview/Overview';
 
 function Layout() {
     return (
@@ -21,7 +22,9 @@ function Layout() {
             </div>
             <div className={`row ${style.bottombar}`}>
                 <div className={`col-4 ${style.boxContainer}`}>
-                    <div className={`h-100  ${style.color2}`}>3</div>
+                    <div className={`h-100  ${style.color2}`}>
+                        <Overview />
+                    </div>
                 </div>
                 <div className={`col-8 ${style.boxContainer}`}>
                     <div className={`h-100  ${style.color2}`}>3</div>
