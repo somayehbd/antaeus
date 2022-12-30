@@ -1,0 +1,42 @@
+.topnav {
+    height: 35px;
+}
+
+.bottombar {
+    height: 30vh;
+}
+
+.middlebar {
+    height: calc(100vh - 30vh - 35px);
+}
+
+.content {
+    background-color: #1A1A1A;
+}
+
+.color1 {
+    background-color: #353535;
+}
+
+.color2 {
+    background-color: #3d3d3d;
+}
+
+.boxContainer {
+    padding: 0;
+    padding-right: 8px;
+    padding-top: 8px;
+}
+
+.boxContainer:first-child {
+    padding-left: 8px;
+}
+
+.bottombar .boxContainer {
+    padding-bottom: 8px;
+}
+
+.boxContainer>div {
+    border-radius: 3px;
+    padding: 3px;
+}
