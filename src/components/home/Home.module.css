@@ -7,14 +7,6 @@
     height: calc(100vh - 30vh - 35px);
 }
 
-.color1 {
-    background-color: #353535;
-}
-
-.color2 {
-    background-color: #3d3d3d;
-}
-
 .boxContainer {
     padding: 0;
     padding-right: 8px;
