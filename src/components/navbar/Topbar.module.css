@@ -1,0 +1,24 @@
+.topbar {
+    height: 35px;
+}
+
+.topbar li{
+    display: inline-block;
+    padding: 10px 8px 7px 8px;
+    font-size: 12px;
+}
+.topbar li:hover{
+    background-color: #2e2e2e;
+}
+.topbar ul{
+    margin: 0;
+    padding:0px;
+}
+
+.topbar a {
+    color:#FFFFFF;
+    
+}
+.topbar a:hover{
+text-decoration: none;
+}
