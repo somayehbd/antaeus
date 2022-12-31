@@ -6,7 +6,7 @@ function Overview() {
 
         <div className={style.flexContainer}>
 
-            <div class={style.item1}><PieChartComponent label1="Blocked: " value1="2517.5" label2="Withdrawable: " value2="18714.37" postfix="€" color="#fff" /> </div>
+            <div className={style.item1}><PieChartComponent label1="Blocked: " value1="2517.5" label2="Withdrawable: " value2="18714.37" postfix="€" color="#fff" /> </div>
 
         </div>
 
