@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import style from './Topbar.module.css'
+import style from './Menu.module.css'
 
-function Topbar() {
+function Menu() {
     return (
         <nav className={style.topbar}>
             <ul>
@@ -21,4 +21,4 @@ function Topbar() {
         </nav>
     )
 }
-export default Topbar;
+export default Menu;
