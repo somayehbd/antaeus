@@ -1,0 +1,17 @@
+.search {
+    padding-top: 5px;
+}
+
+.search input {
+    line-height: 0.5;
+    background-image: url(./img/magnifier.jpg);
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    padding: 0 5px 0 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.search input:focus {
+    border: 0;
+}
