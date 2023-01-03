@@ -3,17 +3,20 @@ import axios from 'axios';
 
 function useGetAPI(apiUrl, defaultValue) {
     const [data, setData] = useState(defaultValue);
-
+    const token = localStorage.getItem("access_token");
     useEffect(() => {
         axios.get(apiUrl, {
             headers: {
-                'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IiAiLCJnaXZlbl9uYW1lIjoiIiwiZmFtaWx5X25hbWUiOiIiLCJ1c2VyX2lkIjoiYWJiN2Q5ZmYtYWRiZi00YTNjLThlYTktYTJmMWQxODg0NWU3IiwibmJmIjoxNjcyNjkwOTU0LCJleHAiOjE2NzI3NzczNTQsImlhdCI6MTY3MjY5MDk1NH0.bxypB8WHpet63Hk_DZ7S01ayNC3z6j6yaWJ5-ukWhu8`
+                'Authorization': `Bearer ${token}`
             }
         }).then(
             response => {
                 setData(response.data.data)
             },
-            reason => { });
+            reason => {
+                if (reason.response.status == 401)
+                    window.location.href = "https://ot-api.eltak.ir/bff/login";
+            });
     }, []);
 
     return ([data])
