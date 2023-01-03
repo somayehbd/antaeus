@@ -20,7 +20,7 @@ function SigninResult() {
 
                 localStorage.setItem('CustomerInfo', JSON.stringify(customerInfo));
                 localStorage.setItem('CustomerTradingCodeInfo', JSON.stringify(customerTradingCodeInfo));
-                localStorage.setItem('access_token', parsed.access_token);
+                localStorage.setItem('AccessToken', parsed.access_token);
                 window.location.href = "/";
             }, customerTradingCodeApiReason => {
                 alert('Signin Failed');

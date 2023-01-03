@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function useGetAPI(apiUrl, defaultValue) {
     const [data, setData] = useState(defaultValue);
-    const token = localStorage.getItem("access_token");
+    const token = localStorage.getItem("AccessToken");
     useEffect(() => {
         axios.get(apiUrl, {
             headers: {
