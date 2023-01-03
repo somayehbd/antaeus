@@ -3,22 +3,19 @@ import queryString from 'query-string'
 
 function SigninResult() {
     const parsed = queryString.parse(window.location.search);
-
-    // Get customer info
-    axios.get('https://ot-api.eltak.ir/User/CustomerInfo', {
+    const axiosOptions = {
         headers: {
             'Authorization': `Bearer ${parsed.access_token}`
         }
-    }).then(
+    }
+
+    // Get customer info
+    axios.get('https://ot-api.eltak.ir/User/CustomerInfo', axiosOptions).then(
         customerApiResponse => {
             const customerInfo = customerApiResponse.data.data;
 
             // Get customer trading code info
-            axios.get('https://ot-api.eltak.ir/User/CustomerTradingCodeInfo', {
-                headers: {
-                    'Authorization': `Bearer ${parsed.access_token}`
-                }
-            }).then(customerTradingCodeApiResponse => {
+            axios.get('https://ot-api.eltak.ir/User/CustomerTradingCodeInfo', axiosOptions).then(customerTradingCodeApiResponse => {
                 const customerTradingCodeInfo = customerTradingCodeApiResponse.data.data;
 
                 localStorage.setItem('CustomerInfo', JSON.stringify(customerInfo));
