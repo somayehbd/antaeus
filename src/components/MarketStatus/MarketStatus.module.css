@@ -1,0 +1,20 @@
+.time{
+    color: white;
+    display: block;
+    float: right;
+}
+.status{
+    padding-top: 7px;
+}
+.icon {
+    display: block;
+    float: right;
+    margin-top: 4px;
+    margin-right: 6px;
+}
+.online{
+    color: #00ff29;
+}
+.offline{
+    color: red;
+}
