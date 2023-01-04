@@ -1,20 +1,21 @@
-.time{
-    color: white;
-    display: block;
-    float: right;
-}
 .status{
-    padding-top: 7px;
+    text-align: right;
+    height: 100%;
 }
 .icon {
-    display: block;
-    float: right;
-    margin-top: 4px;
-    margin-right: 6px;
+    display: inline-block;
+    position: relative;
+    top: 9px;
 }
 .online{
     color: #00ff29;
 }
 .offline{
     color: red;
+}
+.time{
+    color: white;
+    display: inline-block;
+    position: relative;
+    top: 7px;
 }

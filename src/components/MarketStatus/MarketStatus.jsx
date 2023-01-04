@@ -4,7 +4,7 @@ import style from "./MarketStatus.module.css"
 function MarketStatus() {
     return (
     <>
-        <div className={style.status}><span className={style.time}>10:20 AM</span> <RiComputerFill className={`${style.icon} ${style.online}` }/></div>
+        <div className={style.status}><div className={ style.icon }><RiComputerFill className={`${style.online}` }/></div> <div className={style.time}>10:20 AM</div></div>
     </>
     )
 
