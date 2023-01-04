@@ -17,5 +17,6 @@
     color: white;
     display: inline-block;
     position: relative;
-    top: 7px;
+    top: 6px;
+    font-size: 13px;
 }
