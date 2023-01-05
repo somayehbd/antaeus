@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 import style from "./MarketStatus.module.css"
 
 function MarketStatus() {
-
-    
         const [date, setDate] = useState(new Date());
 
         function refreshClock() {

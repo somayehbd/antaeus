@@ -1,6 +1,10 @@
 .status{
     text-align: right;
     height: 100%;
+    display: inline-block;
+    position: relative;
+    left: -29px;
+    top: -9px;
 }
 .icon {
     display: inline-block;
