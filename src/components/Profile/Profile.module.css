@@ -8,4 +8,45 @@
     position: relative;
     left: 6px;
     top: 5px;
-  }
+}
+
+.ProfileMenu {
+    z-index: 1;
+    position: absolute;
+    right: 8px;
+    top: 31px;
+    width: 190px;
+    background: white;
+    color: #262626;
+    text-align: left;
+}
+
+.Profilecontent {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.Profilecontent li {
+    padding-inline-start: 18px;
+}
+
+.Profilecontent a{
+    text-decoration: none;
+}
+
+.Profilecontent li:nth-child(1) {
+    padding-inline-start: 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.picture {
+    background-image: url("./img/profile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45px;
+    height: 70px;
+}
