@@ -1,4 +1,5 @@
 import Overview from "../overview/Overview"
+import Price from "../price/Price";
 import style from "./Home.module.css"
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
                     <div className="h-100 color2">3</div>
                 </div>
                 <div className={`col-3 ${style.boxContainer}`}>
-                    <div className="h-100 color2">3</div>
+                    <div className="h-100 color2"><Price/></div>
                 </div>
                 <div className={`col-5 ${style.boxContainer}`}>
                     <div className="h-100 color2">3</div>

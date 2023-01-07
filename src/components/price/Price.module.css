@@ -1,0 +1,49 @@
+.symbol {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+.rightbutton {
+    background-color: #FFA800;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border-width: 0px;
+    font-size: 15px;
+    width: 80px;
+    height: 35px;
+}
+
+.buttonContainer {
+    text-align: right;
+    margin-top: 12px;
+    margin-right: 8px;
+}
+
+.middletxt {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+}
+
+.greentxt {
+    color: #00FF29;
+    font-size: 12px;
+    display: block;
+}
+
+.priceTable tr,
+.priceTable td {
+    border-style: none;
+    color: #B9B9B9;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.priceTable td {
+    padding: 7px;
+}
+
+    
