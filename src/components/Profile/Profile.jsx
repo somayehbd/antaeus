@@ -17,7 +17,7 @@ function Profile() {
 
     return (
         <>
-            <span class={style.dot} onClick={() => { onclick() }}></span>
+            <span className={style.dot} onClick={() => { onclick() }}></span>
             {
             show == true ? <div className={style.ProfileMenu}>
                 <div className={style.picture}> </div>
