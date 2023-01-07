@@ -10,7 +10,10 @@ function Home() {
                     <div className="h-100 color2">3</div>
                 </div>
                 <div className={`col-3 ${style.boxContainer}`}>
-                    <div className="h-100 color2"><Price/></div>
+                    <div className={`h-100 color2 ${style.pricePlaceOrder}`}>
+                        <Price />
+                        <div className={style.verticalbutton}></div>
+                    </div>
                 </div>
                 <div className={`col-5 ${style.boxContainer}`}>
                     <div className="h-100 color2">3</div>
