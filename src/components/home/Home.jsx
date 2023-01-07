@@ -1,3 +1,4 @@
+import Orderbook from "../orderbook/Orderbook";
 import Overview from "../overview/Overview"
 import Price from "../price/Price";
 import style from "./Home.module.css"
@@ -16,7 +17,7 @@ function Home() {
                     </div>
                 </div>
                 <div className={`col-5 ${style.boxContainer}`}>
-                    <div className="h-100 color2">3</div>
+                    <div className="h-100 color2"><Orderbook/></div>
                 </div>
             </div>
             <div className={`row ${style.bottombar}`}>
