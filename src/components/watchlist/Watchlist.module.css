@@ -1,0 +1,79 @@
+.containerfluid {
+    padding: 0;
+}
+
+.watchlisttabel {
+    margin-left: 0;
+}
+
+.Text {
+    color: #FFFFFF;
+    margin-top: 6px;
+    margin-left: 8px;
+    font-weight: normal;
+}
+
+.watchlisttabel thead tr th {
+    color: #ECECEC;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.watchlisttabel tbody tr {
+    line-height: 0;
+}
+
+.watchlisttabel thead tr th,
+.watchlisttabel tbody tr td {
+    border-style: none;
+    text-align: left;
+}
+
+.watchlisttabel tbody tr td {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+.item1 {
+    /* flex:1 1 auto; */
+    flex-grow: 1;
+    padding: 0px;
+    margin-right: 4px;
+}
+
+.flexcontainer {
+
+    display: flex;
+    height: 100%;
+
+}
+
+.flexcontainer>div {
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.selectbuton,
+.selectbuton:focus {
+    background-color: #444444;
+    color: #EDEDED;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.item2 button {
+    background-color: #2E2E2E;
+    padding: 0px;
+    height: 25px;
+    width: 25px;
+    border-radius: 4px;
+    border: none;
+    padding: 4px;
+    margin: 1px;
+}
+
+.item2 button, .item2 button path {
+    color: #FFFFFF;
+    stroke: #fff;
+}
