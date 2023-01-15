@@ -1,0 +1,55 @@
+.table thead th,
+.table tbody td {
+    border: none;
+}
+
+.table thead th {
+    font-weight: 700;
+    padding: 0 12px 5px 12px;
+}
+
+.table {
+    color: #E9E9E9;
+    font-size: 12px;
+}
+
+.table tbody td {
+    padding: 2px 12px;
+}
+
+.navpill {
+    margin-bottom: 10px;
+    height: 34px;
+}
+
+.navpill li {
+    height: 100%;
+}
+
+.navpill li button {
+    background-color:#3D3D3D;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 0px;
+    border-radius: 0!important;
+    height: 100%;
+    padding: 0 15px;
+}
+
+.navpill button[aria-selected="true"] {
+    background-color: #525252 !important;
+    border-radius: 0!important;
+}
+
+.navpill li button:focus, .navpill li button:focus-visible {
+    outline: 0;
+}
+
+.tabContentReport {
+    height: calc(100% - 34px - 10px);
+}
+
+.tabContentReport > div {
+    height: 100%;
+    overflow-y: scroll;
+}

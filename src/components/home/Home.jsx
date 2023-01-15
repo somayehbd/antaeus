@@ -1,6 +1,7 @@
 import Orderbook from "../orderbook/Orderbook";
 import Overview from "../overview/Overview"
 import Price from "../price/Price";
+import Report from "../Report/Report";
 import Watchlist from "../watchlist/Watchlist";
 import style from "./Home.module.css"
 
@@ -28,7 +29,7 @@ function Home() {
                     </div>
                 </div>
                 <div className={`col-8 ${style.boxContainer}`}>
-                    <div className="h-100 color3">3</div>
+                    <div className="h-100 color3"><Report/></div>
                 </div>
             </div>
         </>
