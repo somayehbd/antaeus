@@ -28,10 +28,17 @@
     display: block;
 }
 
-.greentxt {
-    color: #00FF29;
+.changePercentageText {
     font-size: 12px;
     display: block;
+}
+
+.greentxt {
+    color: #00FF29;
+}
+
+.redtxt {
+    color: #ff0000;
 }
 
 .priceTable tr,

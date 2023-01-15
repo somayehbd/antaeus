@@ -1,15 +1,17 @@
+import usePrice from "../../hooks/usePrice";
 import style from "./Price.module.css"
 
-
 function Price() {
+    const [price] = usePrice();
+
     return (
         <>
             <div class="row">
                 <div class="col-6">
-                    <h1 className={style.symbol}>BTC-UCDT</h1>
+                    <h1 className={style.symbol}>{price.symbolId}</h1>
                     <p>
-                        <span className={style.middletxt}>16.777</span>
-                        <span className={style.greentxt}>0000</span>
+                        <span className={style.middletxt}>{price.changePrice}</span>
+                        <span className={`${style.changePercentageText} ${price.changePercentage >= 0 ? style.greentxt : style.redtxt}`}>{-1 * price.changePercentage}</span>
                     </p>
                 </div>
                 <div className="col-6">
@@ -22,38 +24,37 @@ function Price() {
                         <tbody>
                             <tr>
                                 <td>Value</td>
-                                <td>61.010.978,4405201</td>
+                                <td>{price.volumeValue}</td>
                             </tr>
                             <tr>
                                 <td>Volume</td>
-                                <td>3.649,9346624</td>
+                                <td>{price.volume}</td>
                             </tr>
                             <tr>
                                 <td>High Price</td>
-                                <td>16.800</td>
+                                <td>{price.highPrice}</td>
                             </tr>
                             <tr>
                                 <td>Low Price</td>
-                                <td>16.650</td>
+                                <td>{price.lowPrice}</td>
                             </tr>
                             <tr>
                                 <td>Close Price</td>
-                                <td>16.715,9</td>
+                                <td>{price.closePrice}</td>
                             </tr>
                             <tr>
                                 <td>Open Price</td>
-                                <td>16.710,3</td>
+                                <td>{price.openPrice}</td>
                             </tr>
                             <tr>
                                 <td>Last Trade Time</td>
                                 <td>
-                                    <span>13:39:10</span>
-                                    <span>26-12-2022</span>
+                                    <span>{price.timestamp}</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Markets</td>
-                                <td>USDS</td>
+                                <td>{price.markets}</td>
                             </tr>
                         </tbody>
                     </table></div>

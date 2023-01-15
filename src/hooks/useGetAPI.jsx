@@ -11,7 +11,11 @@ function useGetAPI(apiUrl, defaultValue) {
             }
         }).then(
             response => {
-                setData(response.data.data)
+                if (response.data.status == false) {
+                    alert(response.data.errorMessage);
+                } else {
+                    setData(response.data.data);
+                }
             },
             reason => {
                 if (reason.response.status == 401)
