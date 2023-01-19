@@ -13,7 +13,9 @@
     font-size: 10px;
 }
 
-.orderbooktable tbody tr td:nth-child(1) {
+.orderbooktable tbody tr td:nth-child(1),
+.orderbooktable tbody tr td:nth-child(6)
+{
     color: #FFFFFF;
     text-align: left;
 }
