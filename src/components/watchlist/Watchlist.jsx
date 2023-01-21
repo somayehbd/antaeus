@@ -1,8 +1,12 @@
+import useWatchListLightweight from "../../hooks/useWatchListLightweight"
 import style from "./Watchlist.module.css"
 import { GrFormAdd } from "react-icons/gr";
 import { GrFormSubtract } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
+
 function Watchlist() {
+    const [watchlistLightweight] = useWatchListLightweight();
+
     return (
         <div class={`container-fluid ${style.containerfluid}`}>
             <div class="row">
@@ -16,10 +20,9 @@ function Watchlist() {
                     <div class={style.flexcontainer}>
                         <div className={style.item1}>
                             <select class={`form-control form-control-sm ${style.selectbuton}`}>
-                                <option>Most Profitable</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                {watchlistLightweight.map(item => {
+                                    return (<option value={item.id}>{item.name}</option>)
+                                })}
                             </select>
                         </div>
                         <div className={style.item2}>
