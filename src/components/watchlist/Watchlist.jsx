@@ -8,18 +8,18 @@ function Watchlist() {
     const [watchlistLightweight] = useWatchListLightweight();
 
     return (
-        <div class={`container-fluid ${style.containerfluid}`}>
-            <div class="row">
+        <div className={`container-fluid ${style.containerfluid}`}>
+            <div className="row">
                 <div className="col-12">
                     <p className={style.Text}>Watchlist</p>
                 </div>
             </div>
 
-            <div class="row">
+            <div className="row">
                 <div className="col-12">
-                    <div class={style.flexcontainer}>
+                    <div className={style.flexcontainer}>
                         <div className={style.item1}>
-                            <select class={`form-control form-control-sm ${style.selectbuton}`}>
+                            <select className={`form-control form-control-sm ${style.selectbuton}`}>
                                 {watchlistLightweight.map(item => {
                                     return (<option key={item.id} value={item.id}>{item.name}</option>)
                                 })}
@@ -36,7 +36,7 @@ function Watchlist() {
 
             <div className="row">
                 <div className="col-12">
-                    <table class={`table ${style.watchlisttabel}`} >
+                    <table className={`table ${style.watchlisttabel}`} >
                         <thead>
                             <tr>
                                 <th >Symbol</th>
