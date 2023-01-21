@@ -21,7 +21,7 @@ function Watchlist() {
                         <div className={style.item1}>
                             <select class={`form-control form-control-sm ${style.selectbuton}`}>
                                 {watchlistLightweight.map(item => {
-                                    return (<option value={item.id}>{item.name}</option>)
+                                    return (<option key={item.id} value={item.id}>{item.name}</option>)
                                 })}
                             </select>
                         </div>
