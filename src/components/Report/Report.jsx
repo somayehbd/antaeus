@@ -5,14 +5,13 @@ import ProgressbarComponent from 'antaeus.components.progressbar'
 import style from "./Report.module.css"
 
 function Report() {
-    const [orderReportGetApi] = useOrderReport();
-    console.log(orderReportGetApi);
-     const [orderReport, setOrderReport] = useState([])
+    const [orderReportGetApi] = useOrderReport()
+    const [orderReport, setOrderReport] = useState([])
 
     useEffect(() => {
         if (orderReportGetApi == null || orderReportGetApi == undefined)
             return;
-         setOrderReport(orderReportGetApi);
+        setOrderReport(orderReportGetApi);
     }, [orderReportGetApi]);
 
     return (
@@ -43,8 +42,8 @@ function Report() {
                             </tr>
                         </thead>
                         <tbody>
-                            {orderReport.map(item=>{
-                                return(<tr>
+                            {orderReport.map(item => {
+                                return (<tr key={item.id}>
                                     <td>{item.symbolId}</td>
                                     <td>{item.quantity}</td>
                                     <td>{item.price}</td>
@@ -54,10 +53,10 @@ function Report() {
                                     <td>{item.status}</td>
                                     <td className={style.progressbar}><ProgressbarComponent value="100" /></td>
                                 </tr>)
-                                
+
                             })}
-                            
-                            
+
+
                         </tbody>
                     </table></div>
                 <div class="tab-pane fade" id="pills-transactions" role="tabpanel" aria-labelledby="pills-transactions-tab">...</div>
