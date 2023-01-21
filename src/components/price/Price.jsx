@@ -6,8 +6,8 @@ function Price() {
 
     return (
         <>
-            <div class="row">
-                <div class="col-6">
+            <div className="row">
+                <div className="col-6">
                     <h1 className={style.symbol}>{price.symbolId}</h1>
                     <p>
                         <span className={style.middletxt}>{price.changePrice}</span>
@@ -18,9 +18,9 @@ function Price() {
                     <div className={style.buttonContainer}> <button className={style.rightbutton}>Buy/Sell</button></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <table class={`table ${style.priceTable}`}>
+            <div className="row">
+                <div className="col-12">
+                    <table className={`table ${style.priceTable}`}>
                         <tbody>
                             <tr>
                                 <td>Value</td>
@@ -57,7 +57,8 @@ function Price() {
                                 <td>{price.markets}</td>
                             </tr>
                         </tbody>
-                    </table></div>
+                    </table>
+                </div>
             </div>
         </>
     )
