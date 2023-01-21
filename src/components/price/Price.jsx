@@ -11,7 +11,7 @@ function Price() {
                     <h1 className={style.symbol}>{price.symbolId}</h1>
                     <p>
                         <span className={style.middletxt}>{price.changePrice}</span>
-                        <span className={`${style.changePercentageText} ${price.changePercentage >= 0 ? style.greentxt : style.redtxt}`}>{-1 * price.changePercentage}</span>
+                        <span className={`${style.changePercentageText} ${price.changePercentage >= 0 ? style.greentxt : style.redtxt}`}>{price.changePercentage}</span>
                     </p>
                 </div>
                 <div className="col-6">
