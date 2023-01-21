@@ -27,7 +27,7 @@ function Orderbook() {
 
     return (
         <>
-            <table class={`table ${style.orderbooktable}`} >
+            <table className={`table ${style.orderbooktable}`} >
                 <thead>
                     <tr>
                         <th >Total Quantity</th>
