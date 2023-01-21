@@ -1,18 +1,9 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import useOrderReport from "../../hooks/useOrderReport"
 import ProgressbarComponent from 'antaeus.components.progressbar'
 import style from "./Report.module.css"
 
 function Report() {
-    const [orderReportGetApi] = useOrderReport()
-    const [orderReport, setOrderReport] = useState([])
-
-    useEffect(() => {
-        if (orderReportGetApi == null || orderReportGetApi == undefined)
-            return;
-        setOrderReport(orderReportGetApi);
-    }, [orderReportGetApi]);
+    const [orderReportGetApi] = useOrderReport();
 
     return (
         <>
@@ -42,7 +33,7 @@ function Report() {
                             </tr>
                         </thead>
                         <tbody>
-                            {orderReport.map(item => {
+                            {orderReportGetApi.map(item => {
                                 return (<tr key={item.id}>
                                     <td>{item.symbolId}</td>
                                     <td>{item.quantity}</td>
