@@ -1,11 +1,23 @@
 import useWatchListLightweight from "../../hooks/useWatchListLightweight"
+import useWatchListById from "../../hooks/useWatchListById"
 import style from "./Watchlist.module.css"
 import { GrFormAdd } from "react-icons/gr";
 import { GrFormSubtract } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Watchlist() {
     const [watchlistLightweight] = useWatchListLightweight();
+    const [watchList] = useWatchListById();
+    const [watchListItems, setWatchListItems] = useState([])
+
+    useEffect(() => {
+        if (watchList.watchListItems == null || watchList.watchListItems == undefined)
+            return;
+
+        setWatchListItems(watchList.watchListItems)
+    }, [watchList])
 
     return (
         <div className={`container-fluid ${style.containerfluid}`}>
@@ -39,31 +51,23 @@ function Watchlist() {
                     <table className={`table ${style.watchlisttabel}`} >
                         <thead>
                             <tr>
-                                <th >Symbol</th>
+                                <th>Symbol</th>
                                 <th>Buy</th>
                                 <th>Sell</th>
                                 <th>LastPrice</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>BTC</td>
-                                <td>ETC</td>
-                                <td>PEN</td>
-                                <td>DOT</td>
-                            </tr>
-                            <tr>
-                                <td>BTC</td>
-                                <td>ETC</td>
-                                <td>PEN</td>
-                                <td>DOT</td>
-                            </tr>
-                            <tr>
-                                <td>BTC</td>
-                                <td>ETC</td>
-                                <td>PEN</td>
-                                <td>DOT</td>
-                            </tr>
+                            {watchListItems.map(item => {
+                                return (
+                                    <tr>
+                                        <td>{item.symbolId}</td>
+                                        <td>{item.bestBidPrice}</td>
+                                        <td>{item.bestAskPrice}</td>
+                                        <td>{item.lastPrice}</td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>
