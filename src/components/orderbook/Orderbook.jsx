@@ -41,7 +41,7 @@ function Orderbook() {
                 <tbody>
                     {
                         orderbook.map(item => {
-                            return (<tr>
+                            return (<tr key={item.ask.price}>
                                 <td>{item.ask.totalQuantity}</td>
                                 <td>{item.ask.quantity}</td>
                                 <td>{item.ask.price}</td>
