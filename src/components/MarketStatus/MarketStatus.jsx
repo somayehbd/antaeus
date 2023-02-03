@@ -3,15 +3,11 @@ import { useState, useEffect } from 'react';
 import style from "./MarketStatus.module.css"
 
 function MarketStatus() {
-        const [date, setDate] = useState(new Date());
+        const [date, setDate] = useState(new Date);
 
-        function refreshClock() {
-            setDate(new Date());
-        }
-        useEffect(() => {
-            const timerId = setInterval(refreshClock, 1000);
-        }, []);
-
+        setInterval(() => {
+            setDate(new Date);
+        }, 1000);
 
         return (
             <>
