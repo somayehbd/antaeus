@@ -1,5 +1,6 @@
 import useOrderReport from "../../hooks/useOrderReport"
 import ProgressbarComponent from 'antaeus.components.progressbar'
+import Progressbarf from '../progressbarf/Progressbarf'
 import style from "./Report.module.css"
 
 function Report() {
@@ -29,7 +30,7 @@ function Report() {
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Status</th>
-                                <th>Progress</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,7 +43,7 @@ function Report() {
                                     <td>{item.createdAt}</td>
                                     <td>{item.updatedAt}</td>
                                     <td>{item.status}</td>
-                                    <td className={style.progressbar}><ProgressbarComponent value="100" /></td>
+                                    <td className={style.progressbar}><Progressbarf/></td>
                                 </tr>)
 
                             })}

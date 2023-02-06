@@ -54,6 +54,6 @@
     overflow-y: scroll;
 }
 
-.progressbar svg {
+.progressbar {
     width: 100px;
 }
