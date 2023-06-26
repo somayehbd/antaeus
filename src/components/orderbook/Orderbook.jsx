@@ -1,30 +1,5 @@
-import { useEffect, useState } from "react";
-import useOrderbook from "../../hooks/useOrderbook";
 import style from "./Orderbook.module.css"
 function Orderbook() {
-    const [orderbookApiResponse] = useOrderbook()
-    const [orderbook, setOrderbook] = useState([])
-
-    function CombineBidAsk(asks, bids) {
-        const result = [];
-
-        if (asks == null || asks == undefined)
-            return result;
-
-        for (let i = 0; i < asks.length; i++) {
-            const item = { ask: asks[i], bid: bids[i] }
-            result.push(item)
-        }
-
-        return result;
-
-    }
-
-    useEffect(() => {
-        const newOrderbook = CombineBidAsk(orderbookApiResponse.asks, orderbookApiResponse.bids);
-        setOrderbook(newOrderbook)
-    }, [orderbookApiResponse]);
-
     return (
         <>
             <table className={`table ${style.orderbooktable}`} >
@@ -39,18 +14,14 @@ function Orderbook() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        orderbook.map(item => {
-                            return (<tr key={item.ask.price}>
-                                <td>{item.ask.totalQuantity}</td>
-                                <td>{item.ask.quantity}</td>
-                                <td>{item.ask.price}</td>
-                                <td>{item.bid.price}</td>
-                                <td>{item.bid.quantity}</td>
-                                <td>{item.bid.totalQuantity}</td>
-                            </tr>)
-                        })
-                    }
+                    <tr>
+                        <td>123</td>
+                        <td>100</td>
+                        <td>26000</td>
+                        <td>26100</td>
+                        <td>103</td>
+                        <td>125</td>
+                    </tr>
                 </tbody>
             </table>
         </>

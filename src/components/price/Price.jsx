@@ -1,17 +1,14 @@
-import usePrice from "../../hooks/usePrice";
 import style from "./Price.module.css"
 
 function Price() {
-    const [price] = usePrice();
-
     return (
         <>
             <div className="row">
                 <div className="col-6">
-                    <h1 className={style.symbol}>{price.symbolId}</h1>
+                    <h1 className={style.symbol}>BTC-USDT</h1>
                     <p>
-                        <span className={style.middletxt}>{price.changePrice}</span>
-                        <span className={`${style.changePercentageText} ${price.changePercentage >= 0 ? style.greentxt : style.redtxt}`}>{price.changePercentage}</span>
+                        <span className={style.middletxt}>2300</span>
+                        <span className={`${style.changePercentageText} ${style.redtxt}`}>2</span>
                     </p>
                 </div>
                 <div className="col-6">
@@ -24,37 +21,37 @@ function Price() {
                         <tbody>
                             <tr>
                                 <td>Value</td>
-                                <td>{price.volumeValue}</td>
+                                <td>123</td>
                             </tr>
                             <tr>
                                 <td>Volume</td>
-                                <td>{price.volume}</td>
+                                <td>111</td>
                             </tr>
                             <tr>
                                 <td>High Price</td>
-                                <td>{price.highPrice}</td>
+                                <td>299</td>
                             </tr>
                             <tr>
                                 <td>Low Price</td>
-                                <td>{price.lowPrice}</td>
+                                <td>304</td>
                             </tr>
                             <tr>
                                 <td>Close Price</td>
-                                <td>{price.closePrice}</td>
+                                <td>100</td>
                             </tr>
                             <tr>
                                 <td>Open Price</td>
-                                <td>{price.openPrice}</td>
+                                <td>299</td>
                             </tr>
                             <tr>
                                 <td>Last Trade Time</td>
                                 <td>
-                                    <span>{price.timestamp}</span>
+                                    <span>12:22:08</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Markets</td>
-                                <td>{price.markets}</td>
+                                <td>BTC</td>
                             </tr>
                         </tbody>
                     </table>

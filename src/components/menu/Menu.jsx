@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import style from './Menu.module.css'
 
 function Menu() {
@@ -6,16 +5,16 @@ function Menu() {
         <nav className={style.topbar}>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    Home
                 </li>
                 <li>
-                    <Link to="/report">Report</Link>
+                    Report
                 </li>
                 <li>
-                    <Link to="/topup">Topup</Link>
+                    Topup
                 </li>
                 <li>
-                    <Link to="/management">Management</Link>
+                    Management
                 </li>
             </ul>
         </nav>

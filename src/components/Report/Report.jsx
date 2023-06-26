@@ -1,11 +1,7 @@
-import useOrderReport from "../../hooks/useOrderReport"
-import ProgressbarComponent from 'antaeus.components.progressbar'
 import Progressbarf from '../progressbarf/Progressbarf'
 import style from "./Report.module.css"
 
 function Report() {
-    const [orderReportGetApi] = useOrderReport();
-
     return (
         <>
             <ul className={`nav nav-pills ${style.navpill}`} id="pills-tab" role="tablist">
@@ -34,21 +30,16 @@ function Report() {
                             </tr>
                         </thead>
                         <tbody>
-                            {orderReportGetApi.map(item => {
-                                return (<tr key={item.id}>
-                                    <td>{item.symbolId}</td>
-                                    <td>{item.quantity}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.orderSide}</td>
-                                    <td>{item.createdAt}</td>
-                                    <td>{item.updatedAt}</td>
-                                    <td>{item.status}</td>
-                                    <td className={style.progressbar}><Progressbarf/></td>
-                                </tr>)
-
-                            })}
-
-
+                            <tr>
+                                <td>BTC-USDT</td>
+                                <td>100</td>
+                                <td>26500</td>
+                                <td>BUY</td>
+                                <td>2023-05-20 12:20:30</td>
+                                <td>-</td>
+                                <td>Running</td>
+                                <td className={style.progressbar}><Progressbarf /></td>
+                            </tr>
                         </tbody>
                     </table></div>
                 <div className="tab-pane fade" id="pills-transactions" role="tabpanel" aria-labelledby="pills-transactions-tab">...</div>
