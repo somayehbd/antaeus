@@ -6,6 +6,26 @@ import Watchlist from "../watchlist/Watchlist";
 import style from "./Home.module.css"
 
 function Home() {
+
+    const accessToken = localStorage.getItem('Token')
+
+    fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol',{
+        headers:{
+            'Authorization': `Bearer ${accessToken}`
+        }
+    })
+        .then(response => {
+            if (response.status === 401)
+                window.location.href = 'https://ot.api.kub.aghdam.nl/bff/login';
+
+            response.json()
+        })
+        .then(data => {
+        })
+        .catch(error => {
+            console.error(error);
+        })
+
     return (
         <>
             <div className={`row ${style.middlebar}`}>
@@ -29,7 +49,7 @@ function Home() {
                     </div>
                 </div>
                 <div className={`col-8 ${style.boxContainer}`}>
-                    <div className="h-100 color3"><Report/></div>
+                    <div className="h-100 color3"><Report /></div>
                 </div>
             </div>
         </>
