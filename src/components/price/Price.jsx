@@ -1,6 +1,23 @@
 import style from "./Price.module.css"
 
 function Price() {
+
+    const accessToken = localStorage.getItem('Token')
+    fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol/Price/BTC-USDT',{
+        headers:{
+            'Authorization': `Bearer ${accessToken}`
+        }
+    })
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .then(error => {
+            console.error()
+        })
+
     return (
         <>
             <div className="row">
