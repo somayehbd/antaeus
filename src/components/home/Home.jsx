@@ -18,7 +18,7 @@ function Home() {
             if (response.status === 401)
                 window.location.href = 'https://ot.api.kub.aghdam.nl/bff/login';
 
-            response.json()
+            return response.json()
         })
         .then(data => {
         })
