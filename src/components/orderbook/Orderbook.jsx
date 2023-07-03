@@ -21,7 +21,6 @@ function Orderbook() {
                 return response.json();
             })
             .then(data => {
-                console.log(data.data)
                 setData(data.data)
 
             })
