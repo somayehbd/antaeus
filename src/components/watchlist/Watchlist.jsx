@@ -1,9 +1,32 @@
 import style from "./Watchlist.module.css"
 import { GrFormAdd } from "react-icons/gr";
+import React, { useState, useEffect } from 'react';
 import { GrFormSubtract } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
 
 function Watchlist() {
+    
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const accessToken = localStorage.getItem('Token')
+        fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/Lightweight', {
+            headers: {
+                'Authorization': ` Bearer ${accessToken}`
+            }
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                setData(data.data);
+            })
+            .then(error => {
+
+            })
+
+    }, [])
+
     return (
         <div className={`container-fluid ${style.containerfluid}`}>
             <div className="row">
@@ -17,7 +40,12 @@ function Watchlist() {
                     <div className={style.flexcontainer}>
                         <div className={style.item1}>
                             <select className={`form-control form-control-sm ${style.selectbuton}`}>
-                                <option>Most profitable symbols</option>
+                                {
+                                    data.map((item, index) => {
+                                        return <option key={index}>{item.name}</option>
+                                    })
+                                }
+
                             </select>
                         </div>
                         <div className={style.item2}>
