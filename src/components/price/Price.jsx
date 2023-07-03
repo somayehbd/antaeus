@@ -18,7 +18,6 @@ function Price() {
                 return response.json()
             })
             .then(data => {
-                console.log(data)
                 setData(data.data)
             })
             .then(error => {
