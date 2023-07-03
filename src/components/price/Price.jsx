@@ -1,24 +1,34 @@
+import React, { useState, useEffect } from 'react'
 import style from "./Price.module.css"
 
 function Price() {
 
-    const accessToken = localStorage.getItem('Token')
-    fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol/Price/BTC-USDT',{
-        headers:{
-            'Authorization': `Bearer ${accessToken}`
-        }
-    })
-        .then(response => {
-            return response.json()
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+        const accessToken = localStorage.getItem('Token')
+        fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol/Price/BTC-USDT', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
         })
-        .then(data => {
-            console.log(data)
-        })
-        .then(error => {
-            console.error()
-        })
+            .then(response => {
+                if (response.status === 401)
+                    window.location.href = 'https://ot.api.kub.aghdam.nl/bff/login';
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+                setData(data.data)
+            })
+            .then(error => {
+                console.error()
+            })
+
+    },[])
 
     return (
+       
         <>
             <div className="row">
                 <div className="col-6">
@@ -36,44 +46,46 @@ function Price() {
                 <div className="col-12">
                     <table className={`table ${style.priceTable}`}>
                         <tbody>
-                            <tr>
-                                <td>Value</td>
-                                <td>123</td>
-                            </tr>
-                            <tr>
-                                <td>Volume</td>
-                                <td>111</td>
-                            </tr>
-                            <tr>
-                                <td>High Price</td>
-                                <td>299</td>
-                            </tr>
-                            <tr>
-                                <td>Low Price</td>
-                                <td>304</td>
-                            </tr>
-                            <tr>
-                                <td>Close Price</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>Open Price</td>
-                                <td>299</td>
-                            </tr>
-                            <tr>
-                                <td>Last Trade Time</td>
-                                <td>
-                                    <span>12:22:08</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Markets</td>
-                                <td>BTC</td>
-                            </tr>
+                                <tr>
+                                    < td > Value</td>
+                                    <td>{data.volumeValue}</td>
+                                </tr>
+                                <tr>
+                                    <td>Volume</td>
+                                    <td>{data.volume}</td>
+                                </tr>
+                                <tr>
+                                    <td>High Price</td>
+                                    <td>{data.highPrice}</td>
+                                </tr>
+                                <tr>
+                                    <td>Low Price</td>
+                                    <td>{data.lowPrice}</td>
+                                </tr>
+                                <tr>
+                                    <td>Close Price</td>
+                                    <td>{data.closePrice}</td>
+                                </tr>
+                                <tr>
+                                    <td>Open Price</td>
+                                    <td>{data.closePrice}</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Trade Time</td>
+                                    <td>
+                                        <span>{data.timestamp}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Markets</td>
+                                    <td>{data.markets}</td>
+                                </tr>
+                            
+                            
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div >
+            </div >
         </>
     )
 }
