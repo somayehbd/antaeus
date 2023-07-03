@@ -46,16 +46,17 @@ function Orderbook() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.asks.map((item, index) => {
-                        return <tr key={index}>
-                            <td>{item.totalQuantity}</td>
-                            <td>{item.quantity}</td>
-                            <td>{item.price}</td>
-                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].price}</td>
-                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].quantity}</td>
-                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].totalQuantity}</td>
-                        </tr>
-                    })
+                    {data.asks && data.bids &&
+                        data.asks.map((item, index) => {
+                            return <tr key={index}>
+                                <td>{item.totalQuantity}</td>
+                                <td>{item.quantity}</td>
+                                <td>{item.price}</td>
+                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].price}</td>
+                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].quantity}</td>
+                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].totalQuantity}</td>
+                            </tr>
+                        })
                     }
                 </tbody>
             </table>
