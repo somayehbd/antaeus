@@ -5,11 +5,13 @@ import { GrFormSubtract } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
 
 function Watchlist() {
-    
-    const [data, setData] = useState([])
 
+    //state to got options of select element in watchList
+    const accessToken = localStorage.getItem('Token')
+    const [data, setData] = useState([])
+    const [selectedWatchListId, setselectedWatchListId] = useState([])
     useEffect(() => {
-        const accessToken = localStorage.getItem('Token')
+
         fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/Lightweight', {
             headers: {
                 'Authorization': ` Bearer ${accessToken}`
@@ -19,12 +21,37 @@ function Watchlist() {
                 return response.json()
             })
             .then(data => {
+
                 setData(data.data);
             })
             .then(error => {
 
             })
 
+    }, [])
+
+    
+    function handleClick(e) {
+        const selecteId = e.target.value;
+    }
+
+    // request for WatchList by Id
+    useEffect(() => {
+
+        fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/1', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                setselectedWatchListId(data.data.watchListItems)
+            })
+            .then(error => {
+
+            })
     }, [])
 
     return (
@@ -39,10 +66,10 @@ function Watchlist() {
                 <div className="col-12">
                     <div className={style.flexcontainer}>
                         <div className={style.item1}>
-                            <select className={`form-control form-control-sm ${style.selectbuton}`}>
+                            <select className={`form-control form-control-sm ${style.selectbuton}`} onChange={handleClick}>
                                 {
                                     data.map((item, index) => {
-                                        return <option key={index}>{item.name}</option>
+                                        return <option key={index} value={item.id} >{item.name}</option>
                                     })
                                 }
 
@@ -68,13 +95,17 @@ function Watchlist() {
                                 <th>LastPrice</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>BTC-USDT</td>
-                                <td>25000</td>
-                                <td>23550</td>
-                                <td>23100</td>
-                            </tr>
+                        <tbody>{selectedWatchListId.map((item, index) => {
+                            return(
+                            <tr key={index}>
+                                <td>{item.symbolId}</td>
+                                <td>{item.bestBidPrice}</td>
+                                <td>{item.bestAskPrice}</td>
+                                <td>{item.lastPrice}</td>
+                            </tr>)
+                            
+                        })}
+
                         </tbody>
                     </table>
                 </div>
