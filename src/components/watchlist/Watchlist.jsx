@@ -7,13 +7,12 @@ import { MdEdit } from "react-icons/md";
 function Watchlist() {
 
     //state to got options of select element in watchList
-    const accessToken = localStorage.getItem('Token')
     const [data, setData] = useState([])
     const [selectedWatchListId, setselectedWatchListId] = useState([])
     const[selectedId,setselectedId]=useState(null);
 
     useEffect(() => {
-
+        const accessToken = localStorage.getItem('Token')
         fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/Lightweight', {
             headers: {
                 'Authorization': ` Bearer ${accessToken}`
@@ -41,7 +40,7 @@ function Watchlist() {
     // request for WatchList by Id
     useEffect(() => {
         if(selectedId == null) return
-
+        const accessToken = localStorage.getItem('Token')
         fetch(`https://ot.api.kub.aghdam.nl/WatchList/WatchList/${selectedId}`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
