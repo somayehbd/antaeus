@@ -10,6 +10,8 @@ function Watchlist() {
     const accessToken = localStorage.getItem('Token')
     const [data, setData] = useState([])
     const [selectedWatchListId, setselectedWatchListId] = useState([])
+    const[selectedId,setselectedId]=useState(null);
+
     useEffect(() => {
 
         fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/Lightweight', {
@@ -30,15 +32,17 @@ function Watchlist() {
 
     }, [])
 
-    
+
     function handleClick(e) {
         const selecteId = e.target.value;
+        setselectedId(selecteId)
     }
 
     // request for WatchList by Id
     useEffect(() => {
+        if(selectedId == null) return
 
-        fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/1', {
+        fetch(`https://ot.api.kub.aghdam.nl/WatchList/WatchList/${selectedId}`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }
@@ -52,7 +56,7 @@ function Watchlist() {
             .then(error => {
 
             })
-    }, [])
+    }, [selectedId])
 
     return (
         <div className={`container-fluid ${style.containerfluid}`}>
