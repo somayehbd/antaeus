@@ -32,34 +32,32 @@ function Orderbook() {
 
 
     return (
-        <>
-            <table className={`table ${style.orderbooktable}`} >
-                <thead>
-                    <tr>
-                        <th >Total Quantity</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th >Total Quantity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.asks && data.bids &&
-                        data.asks.map((item, index) => {
-                            return <tr key={index}>
-                                <td>{item.totalQuantity}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.price}</td>
-                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].price}</td>
-                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].quantity}</td>
-                                <td>{data.bids[index] === undefined ? 0 : data.bids[index].totalQuantity}</td>
-                            </tr>
-                        })
-                    }
-                </tbody>
-            </table>
-        </>
+        <table data-testid="orderbook" className={`table ${style.orderbooktable}`} >
+            <thead>
+                <tr>
+                    <th>Total Quantity</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {data.asks && data.bids &&
+                    data.asks.map((item, index) => {
+                        return <tr key={index}>
+                            <td>{item.totalQuantity}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.price}</td>
+                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].price}</td>
+                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].quantity}</td>
+                            <td>{data.bids[index] === undefined ? 0 : data.bids[index].totalQuantity}</td>
+                        </tr>
+                    })
+                }
+            </tbody>
+        </table>
     )
 }
 export default Orderbook;

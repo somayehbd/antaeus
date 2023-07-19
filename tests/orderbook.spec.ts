@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify Orderbook', async ({ page }) => {
+test('it should contain 5 table rows', async ({ page }) => {
 
   await page.goto('http://localhost:3000/', { timeout: 60000 });
   await page.waitForURL('https://ids.kub.aghdam.nl/Account/Login**', { timeout: 70000 });
@@ -15,13 +15,15 @@ test('Verify Orderbook', async ({ page }) => {
   await page.waitForURL('http://localhost:3000/');
   await page.waitForLoadState('networkidle');
 
-  const elementsLocator = page.locator("[class*='Orderbook_orderbooktable'] tr");
+  const elementsLocator = page.locator("[class*='Orderbook_orderbooktable'] tbody tr ");
   const rowsCount = await elementsLocator.count();
 
   for (let i = 0; i < rowsCount; i++) {
     const row = await elementsLocator.nth(i).innerText();
     console.log( 'Element at index =====>', row);
+
   }
+
+  expect(rowsCount).toEqual(5);
   
-  expect(rowsCount).toEqual(6);
 });
