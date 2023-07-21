@@ -23,7 +23,6 @@ function Price() {
             .then(error => {
                 console.error()
             })
-
     },[])
 
     return (
@@ -31,7 +30,7 @@ function Price() {
         <>
             <div className="row">
                 <div className="col-6">
-                    <h1 className={style.symbol}>BTC-USDT</h1>
+                    <h1 data-testid="symbol" className={style.symbol}>BTC-USDT</h1>
                     <p>
                         <span className={style.middletxt}>2300</span>
                         <span className={`${style.changePercentageText} ${style.redtxt}`}>2</span>
