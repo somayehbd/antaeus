@@ -1,6 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import CONFIG from '../../config';
 import style from "./Watchlist.module.css"
 import { GrFormAdd } from "react-icons/gr";
-import React, { useState, useEffect } from 'react';
 import { GrFormSubtract } from "react-icons/gr";
 import { MdEdit } from "react-icons/md";
 
@@ -13,7 +14,7 @@ function Watchlist() {
 
     useEffect(() => {
         const accessToken = localStorage.getItem('Token')
-        fetch('https://ot.api.kub.aghdam.nl/WatchList/WatchList/Lightweight', {
+        fetch(`${CONFIG.BASE_ADDRESS}/WatchList/WatchList/Lightweight`, {
             headers: {
                 'Authorization': ` Bearer ${accessToken}`
             }
@@ -41,7 +42,7 @@ function Watchlist() {
     useEffect(() => {
         if(selectedId == null) return
         const accessToken = localStorage.getItem('Token')
-        fetch(`https://ot.api.kub.aghdam.nl/WatchList/WatchList/${selectedId}`, {
+        fetch(`${CONFIG.BASE_ADDRESS}/WatchList/WatchList/${selectedId}`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }

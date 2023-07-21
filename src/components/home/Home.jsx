@@ -6,26 +6,6 @@ import Watchlist from "../watchlist/Watchlist";
 import style from "./Home.module.css"
 
 function Home() {
-
-    const accessToken = localStorage.getItem('Token')
-
-    fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol',{
-        headers:{
-            'Authorization': `Bearer ${accessToken}`
-        }
-    })
-        .then(response => {
-            if (response.status === 401)
-                window.location.href = 'https://ot.api.kub.aghdam.nl/bff/login';
-
-            return response.json()
-        })
-        .then(data => {
-        })
-        .catch(error => {
-            console.error(error);
-        })
-
     return (
         <>
             <div className={`row ${style.middlebar}`}>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CONFIG from '../../config';
 import style from "./Price.module.css"
 
 function Price() {
@@ -7,14 +8,14 @@ function Price() {
 
     useEffect(() => {
         const accessToken = localStorage.getItem('Token')
-        fetch('https://ot.api.kub.aghdam.nl/MarketData/Symbol/Price/BTC-USDT', {
+        fetch(`${CONFIG.BASE_ADDRESS}/MarketData/Symbol/Price/BTC-USDT`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }
         })
             .then(response => {
                 if (response.status === 401)
-                    window.location.href = 'https://ot.api.kub.aghdam.nl/bff/login';
+                    window.location.href = `${CONFIG.BASE_ADDRESS}/bff/login`;
                 return response.json()
             })
             .then(data => {
