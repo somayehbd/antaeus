@@ -1,5 +1,5 @@
 const CONFIG = {
-    BASE_ADDRESS: 'https://ot.api.kub.aghdam.nl'
+    BASE_ADDRESS: 'http://localhost:3100'
 }
 
 export default CONFIG;

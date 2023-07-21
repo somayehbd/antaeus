@@ -1,0 +1,187 @@
+{
+  "uuid": "ffcf4f56-a60e-4b57-8520-b933dc7103f1",
+  "lastMigration": 25,
+  "name": "Server",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3100,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "8af13aed-1059-486f-a747-e1e7652857bc",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "WatchList/WatchList/Lightweight",
+      "responses": [
+        {
+          "uuid": "afc6a4fc-c60b-4677-8ec6-b57ac4375dba",
+          "body": "\n  {\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Most Profitable Symbols\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Custom Watchlist\"\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "63deb527-5132-4dc1-9a31-86b412ca1c06",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "WatchList/WatchList/:WATCHLIST_ID",
+      "responses": [
+        {
+          "uuid": "f9ae8b40-3441-46c4-99c3-d9de9e7db067",
+          "body": "{\n  \"data\": {\n    \"id\": 4,\n    \"name\": \"Sample Watchlist\",\n    \"watchListItems\": [\n      {\n        \"id\": 3,\n        \"symbolId\": \"BTC-USDT\",\n        \"lastPrice\": 30413.9,\n        \"bestAskPrice\": 30413.9,\n        \"bestBidPrice\": 30413.8,\n        \"highPrice\": 31282.4,\n        \"lowPrice\": 29500,\n        \"changePrice\": -205.5,\n        \"changePercentage\": -0.0067\n      },\n      {\n        \"id\": 4,\n        \"symbolId\": \"ETC-USDT\",\n        \"lastPrice\": 19.7293,\n        \"bestAskPrice\": 19.73,\n        \"bestBidPrice\": 19.7242,\n        \"highPrice\": 21.0278,\n        \"lowPrice\": 17.8518,\n        \"changePrice\": 1.7449,\n        \"changePercentage\": 0.097\n      },\n      {\n        \"id\": 5,\n        \"symbolId\": \"TRX-USDT\",\n        \"lastPrice\": 0.075997,\n        \"bestAskPrice\": 0.075998,\n        \"bestBidPrice\": 0.075997,\n        \"highPrice\": 0.076862,\n        \"lowPrice\": 0.074062,\n        \"changePrice\": 0.001543,\n        \"changePercentage\": 0.0207\n      }\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "b410440a-258d-4ab2-b920-9ba256aa5e7d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "MarketData/Bestlimit/:SYMBOL_NAME",
+      "responses": [
+        {
+          "uuid": "a8c8a72e-170c-454d-bca0-b42487807b44",
+          "body": "{\n  \n  \"data\": {\n    \"symbolId\": \"{{urlParam 'SYMBOL_NAME'}}\",\n    \"bids\": [\n      {\n        \"price\": 30413.8,\n        \"quantity\": 2.44152075,\n        \"totalQuantity\": 2.44152075\n      },\n      {\n        \"price\": 30413.6,\n        \"quantity\": 0.4950155,\n        \"totalQuantity\": 2.93653625\n      },\n      {\n        \"price\": 30413.5,\n        \"quantity\": 0.49336726,\n        \"totalQuantity\": 3.42990351\n      },\n      {\n        \"price\": 30413.4,\n        \"quantity\": 0.49336726,\n        \"totalQuantity\": 3.92327077\n      },\n      {\n        \"price\": 30413.3,\n        \"quantity\": 0.00291123,\n        \"totalQuantity\": 3.926182\n      }\n    ],\n    \"asks\": [\n      {\n        \"price\": 30413.9,\n        \"quantity\": 0.08137282,\n        \"totalQuantity\": 0.08137282\n      },\n      {\n        \"price\": 30414,\n        \"quantity\": 0.00283734,\n        \"totalQuantity\": 0.08421016\n      },\n      {\n        \"price\": 30414.1,\n        \"quantity\": 0.00283734,\n        \"totalQuantity\": 0.0870475\n      },\n      {\n        \"price\": 30414.3,\n        \"quantity\": 0.00567468,\n        \"totalQuantity\": 0.09272218\n      },\n      {\n        \"price\": 30414.6,\n        \"quantity\": 0.0002,\n        \"totalQuantity\": 0.09292218\n      }\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "a1b7c28c-df26-4169-a896-e7575c6c8e40",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "MarketData/Symbol/Price/:SYMBOL_NAME",
+      "responses": [
+        {
+          "uuid": "2bb197a2-caca-454f-bfe2-a2c7ec73cfab",
+          "body": "{\n  \"data\": {\n    \"symbolId\": \"{{urlParam 'SYMBOL_NAME'}}\",\n    \"lastPrice\": 30413.9,\n    \"lastQuantity\": 0.00005229,\n    \"bestAskPrice\": 30413.9,\n    \"bestAskQuantity\": 0.01406052,\n    \"bestBidPrice\": 30413.8,\n    \"bestBidQuantity\": 2.43743858,\n    \"timestamp\": \"2023-06-30T20:04:58.829Z\",\n    \"trading\": true,\n    \"volumeValue\": 313188430.441088,\n    \"volume\": 10272.90964592,\n    \"highPrice\": 31282.4,\n    \"lowPrice\": 29500,\n    \"closePrice\": 30413.9,\n    \"openPrice\": 30619.4,\n    \"changePrice\": -205.5,\n    \"changePercentage\": -0.0067,\n    \"averagePrice\": 30504.80509762,\n    \"markets\": [\n      \"USDS\"\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "8af13aed-1059-486f-a747-e1e7652857bc"
+    },
+    {
+      "type": "route",
+      "uuid": "63deb527-5132-4dc1-9a31-86b412ca1c06"
+    },
+    {
+      "type": "route",
+      "uuid": "b410440a-258d-4ab2-b920-9ba256aa5e7d"
+    },
+    {
+      "type": "route",
+      "uuid": "a1b7c28c-df26-4169-a896-e7575c6c8e40"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
