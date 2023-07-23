@@ -46,7 +46,7 @@ function Price() {
                     <table data-testid="price" className={`table ${style.priceTable}`}>
                         <tbody>
                             <tr>
-                                <td> Value</td>
+                                <td>Value</td>
                                 <td>{data.volumeValue}</td>
                             </tr>
                             <tr>

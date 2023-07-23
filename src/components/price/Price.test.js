@@ -16,7 +16,7 @@ describe('Price Component', () => {
 
     })
 
-    it('it should contain first row', () => {
+    it('should be Value on 1st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[0]
@@ -25,7 +25,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Value');
     })
 
-    it('it should contain second row', () => {
+    it('should be Volume on 2nd row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[1]
@@ -34,7 +34,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Volume');
     })
 
-    it('it should contain third row', () => {
+    it('should be High Price on 3rd row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[2]
@@ -43,7 +43,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('High Price');
     })
 
-    it('it should contain forth row', () => {
+    it('should be Low Price on 4st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[3]
@@ -52,7 +52,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Low Price');
     })
 
-    it('it should contain fifth row', () => {
+    it('should be Close Price on 5st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[4]
@@ -61,7 +61,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Close Price');
     })
 
-    it('it should contain sixth row', () => {
+    it('should be Open Price on 6st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[5]
@@ -70,7 +70,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Open Price');
     })
 
-    it('it should contain seventh row', () => {
+    it('it should be Last Trade Time on 7st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[6]
@@ -79,7 +79,7 @@ describe('Price Component', () => {
         expect(firstRowText.trim()).toBe('Last Trade Time');
     })
 
-    it('it should contain eigth row', () => {
+    it('should be Markets on 9st row', () => {
         render(<Price />)
         const table = screen.getByTestId("price")
         const firstRow = table.querySelectorAll("tbody tr")[7]
