@@ -59,6 +59,7 @@ function Watchlist() {
     }, [selectedId])
 
     return (
+     
         <div className={`container-fluid ${style.containerfluid}`}>
             <div className="row">
                 <div className="col-12">
@@ -70,7 +71,7 @@ function Watchlist() {
                 <div className="col-12">
                     <div className={style.flexcontainer}>
                         <div className={style.item1}>
-                            <select className={`form-control form-control-sm ${style.selectbuton}`} onChange={handleClick}>
+                            <select data-testid="select" className={`form-control form-control-sm ${style.selectbuton}`} onChange={handleClick}>
                                 {
                                     data.map((item, index) => {
                                         return <option key={index} value={item.id} >{item.name}</option>
@@ -80,9 +81,9 @@ function Watchlist() {
                             </select>
                         </div>
                         <div className={style.item2}>
-                            <button><GrFormAdd /></button>
-                            <button><GrFormSubtract /></button>
-                            <button><MdEdit /></button>
+                            <button data-testid="addbutton"><GrFormAdd /></button>
+                            <button data-testid="deletebutton"><GrFormSubtract /></button>
+                            <button data-testid="editbutton"><MdEdit /></button>
                         </div>
                     </div>
                 </div>
@@ -90,7 +91,7 @@ function Watchlist() {
 
             <div className="row">
                 <div className="col-12">
-                    <table className={`table ${style.watchlisttabel}`} >
+                    <table data-testid="table"className={`table ${style.watchlisttabel}`} >
                         <thead>
                             <tr>
                                 <th>Symbol</th>
