@@ -7,7 +7,7 @@ function Overview() {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        
+
         const accessToken = localStorage.getItem('Token')
         fetch(`${CONFIG.BASE_ADDRESS}/WalletManagement/Wallet`, {
             headers: {
@@ -28,7 +28,7 @@ function Overview() {
 
     return (
         <>
-            {console.log(data)}
+
             <div className={style.flexContainer}>
                 <div className={style.item1}><PieChartComponent label1="Blocked:" value1={data.blocked} label2="Withdrawable: " value2={data.withdrawable} postfix="€" color="#fff" /> </div>
             </div>

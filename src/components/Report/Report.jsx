@@ -1,7 +1,27 @@
+import { useEffect, useState } from 'react';
 import Progressbarf from '../progressbarf/Progressbarf'
+import CONFIG from '../../config';
 import style from "./Report.module.css"
 
 function Report() {
+    const [data, setdata] = useState([]);
+
+    useEffect(() => {
+
+        const accessToken = localStorage.getItem('Token')
+        fetch(`${CONFIG.BASE_ADDRESS}/OrderManagement/Order`, {
+            headers: {
+                'Authorization': ` Bearer ${accessToken}`
+            }
+        })
+            .then(response => {
+                return (response.json())
+            })
+            .then(data => {
+                setdata(data.data)
+            })
+    }, [])
+
     return (
         <>
             <ul className={`nav nav-pills ${style.navpill}`} id="pills-tab" role="tablist">
@@ -30,16 +50,19 @@ function Report() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>BTC-USDT</td>
-                                <td>100</td>
-                                <td>26500</td>
-                                <td>BUY</td>
-                                <td>2023-05-20 12:20:30</td>
-                                <td>-</td>
-                                <td>Running</td>
-                                <td className={style.progressbar}><Progressbarf /></td>
-                            </tr>
+                            {
+                                data.map((item) => {
+                                    return <tr key={item.id}>
+                                        <td>{item.symbolId}</td>
+                                        <td>{item.quantity}</td>
+                                        <td>{item.price}</td>
+                                        <td>{item.orderSide}</td>
+                                        <td>{item.createdAt}</td>
+                                        <td>{item.updatedAt}</td>
+                                        <td className={style.progressbar}><Progressbarf /></td>
+                                    </tr>
+                                })
+                            }
                         </tbody>
                     </table></div>
                 <div className="tab-pane fade" id="pills-transactions" role="tabpanel" aria-labelledby="pills-transactions-tab">...</div>

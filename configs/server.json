@@ -189,7 +189,7 @@
       "responses": [
         {
           "uuid": "01d20d3a-d646-45ab-9582-dfba7cdf77a2",
-          "body": "{\n  \"data\": [\n    {\n      \"id\": 0,\n      \"customerTradingCodeId\": \"string\",\n      \"symbolId\": \"string\",\n      \"quantity\": 0,\n      \"price\": 0,\n      \"orderSide\": 1,\n      \"createdAt\": \"2023-07-28T09:07:02.400Z\",\n      \"updatedAt\": \"2023-07-28T09:07:02.400Z\",\n      \"status\": 0,\n      \"isActive\": true\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"string\",\n  \"errorCode\": 0\n}",
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 0,\n      \"customerTradingCodeId\": \"sm2020\",\n      \"symbolId\": \"BTC-USDT\",\n      \"quantity\": 2.44152075,\n      \"price\": 19.7293,\n      \"orderSide\": 1,\n      \"createdAt\": \"2023-07-28T09:07:02.400Z\",\n      \"updatedAt\": \"2023-07-28T09:07:02.400Z\",\n      \"status\": 0,\n      \"isActive\": true\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"string\",\n  \"errorCode\": 0\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
