@@ -7,10 +7,10 @@ import { MdEdit } from "react-icons/md";
 
 function Watchlist() {
 
-    //state to got options of select element in watchList
+    //state to get options of select element in watchList
     const [data, setData] = useState([])
     const [selectedWatchListId, setselectedWatchListId] = useState([])
-    const[selectedId,setselectedId]=useState(null);
+    const [selectedId, setselectedId] = useState(null);
 
     useEffect(() => {
         const accessToken = localStorage.getItem('Token')
@@ -23,8 +23,10 @@ function Watchlist() {
                 return response.json()
             })
             .then(data => {
-
                 setData(data.data);
+
+                if (data.data.length > 0)
+                    setselectedId(data.data[0].id);
             })
             .then(error => {
 
@@ -40,7 +42,7 @@ function Watchlist() {
 
     // request for WatchList by Id
     useEffect(() => {
-        if(selectedId == null) return
+        if (selectedId == null) return
         const accessToken = localStorage.getItem('Token')
         fetch(`${CONFIG.BASE_ADDRESS}/WatchList/WatchList/${selectedId}`, {
             headers: {
@@ -58,8 +60,11 @@ function Watchlist() {
             })
     }, [selectedId])
 
+    useEffect(() => {
+    }, [selectedWatchListId])
+
     return (
-     
+
         <div className={`container-fluid ${style.containerfluid}`}>
             <div className="row">
                 <div className="col-12">
@@ -91,7 +96,7 @@ function Watchlist() {
 
             <div className="row">
                 <div className="col-12">
-                    <table data-testid="table"className={`table ${style.watchlisttabel}`} >
+                    <table data-testid="table" className={`table ${style.watchlisttabel}`} >
                         <thead>
                             <tr>
                                 <th>Symbol</th>
@@ -101,14 +106,14 @@ function Watchlist() {
                             </tr>
                         </thead>
                         <tbody>{selectedWatchListId.map((item, index) => {
-                            return(
-                            <tr key={index}>
-                                <td>{item.symbolId}</td>
-                                <td>{item.bestBidPrice}</td>
-                                <td>{item.bestAskPrice}</td>
-                                <td>{item.lastPrice}</td>
-                            </tr>)
-                            
+                            return (
+                                <tr key={index}>
+                                    <td>{item.symbolId}</td>
+                                    <td>{item.bestBidPrice}</td>
+                                    <td>{item.bestAskPrice}</td>
+                                    <td>{item.lastPrice}</td>
+                                </tr>)
+
                         })}
 
                         </tbody>
