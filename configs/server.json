@@ -16,7 +16,7 @@
       "responses": [
         {
           "uuid": "afc6a4fc-c60b-4677-8ec6-b57ac4375dba",
-          "body": "\n  {\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Most Profitable Symbols\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"Custom Watchlist\"\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}\n",
+          "body": "\n  {\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Most Profitable Symbols\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Custom Watchlist\"\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}\n",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -48,7 +48,7 @@
       "responses": [
         {
           "uuid": "f9ae8b40-3441-46c4-99c3-d9de9e7db067",
-          "body": "{\n  \"data\": {\n    \"id\": 4,\n    \"name\": \"Sample Watchlist\",\n    \"watchListItems\": [\n      {\n        \"id\": 3,\n        \"symbolId\": \"BTC-USDT\",\n        \"lastPrice\": 30413.9,\n        \"bestAskPrice\": 30413.9,\n        \"bestBidPrice\": 30413.8,\n        \"highPrice\": 31282.4,\n        \"lowPrice\": 29500,\n        \"changePrice\": -205.5,\n        \"changePercentage\": -0.0067\n      },\n      {\n        \"id\": 4,\n        \"symbolId\": \"ETC-USDT\",\n        \"lastPrice\": 19.7293,\n        \"bestAskPrice\": 19.73,\n        \"bestBidPrice\": 19.7242,\n        \"highPrice\": 21.0278,\n        \"lowPrice\": 17.8518,\n        \"changePrice\": 1.7449,\n        \"changePercentage\": 0.097\n      },\n      {\n        \"id\": 5,\n        \"symbolId\": \"TRX-USDT\",\n        \"lastPrice\": 0.075997,\n        \"bestAskPrice\": 0.075998,\n        \"bestBidPrice\": 0.075997,\n        \"highPrice\": 0.076862,\n        \"lowPrice\": 0.074062,\n        \"changePrice\": 0.001543,\n        \"changePercentage\": 0.0207\n      }\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"WATCHLIST_NAME\",\n    \"watchListItems\": [\n      {\n        \"id\": 3,\n        \"symbolId\": \"BTC-USDT\",\n        \"lastPrice\": 30413.9,\n        \"bestAskPrice\": 30413.9,\n        \"bestBidPrice\": 30413.8,\n        \"highPrice\": 31282.4,\n        \"lowPrice\": 29500,\n        \"changePrice\": -205.5,\n        \"changePercentage\": -0.0067\n      },\n      {\n        \"id\": 4,\n        \"symbolId\": \"ETC-USDT\",\n        \"lastPrice\": 19.7293,\n        \"bestAskPrice\": 19.73,\n        \"bestBidPrice\": 19.7242,\n        \"highPrice\": 21.0278,\n        \"lowPrice\": 17.8518,\n        \"changePrice\": 1.7449,\n        \"changePercentage\": 0.097\n      },\n      {\n        \"id\": 5,\n        \"symbolId\": \"TRX-USDT\",\n        \"lastPrice\": 0.075997,\n        \"bestAskPrice\": 0.075998,\n        \"bestBidPrice\": 0.075997,\n        \"highPrice\": 0.076862,\n        \"lowPrice\": 0.074062,\n        \"changePrice\": 0.001543,\n        \"changePercentage\": 0.0207\n      }\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -57,11 +57,44 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "WATCHLIST_ID",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
+        },
+        {
+          "uuid": "c81900d3-28d3-4f4e-91e0-a1b31faa75d6",
+          "body": "{\n  \"data\": {\n    \"id\": 2,\n    \"name\": \"WATCHLIST_NAME\",\n    \"watchListItems\": [\n      {\n        \"id\": 30,\n        \"symbolId\": \"BTC-USDT\",\n        \"lastPrice\": 30413.9,\n        \"bestAskPrice\": 30413.9,\n        \"bestBidPrice\": 30413.8,\n        \"highPrice\": 31282.4,\n        \"lowPrice\": 29500,\n        \"changePrice\": -205.5,\n        \"changePercentage\": -0.0067\n      },\n      {\n        \"id\": 40,\n        \"symbolId\": \"SHB-USDT\",\n        \"lastPrice\": 19.7293,\n        \"bestAskPrice\": 19.73,\n        \"bestBidPrice\": 19.7242,\n        \"highPrice\": 21.0278,\n        \"lowPrice\": 17.8518,\n        \"changePrice\": 1.7449,\n        \"changePercentage\": 0.097\n      },\n      {\n        \"id\": 50,\n        \"symbolId\": \"ETH-USDT\",\n        \"lastPrice\": 0.075997,\n        \"bestAskPrice\": 0.075998,\n        \"bestBidPrice\": 0.075997,\n        \"highPrice\": 0.076862,\n        \"lowPrice\": 0.074062,\n        \"changePrice\": 0.001543,\n        \"changePercentage\": 0.0207\n      },\n      {\n        \"id\": 60,\n        \"symbolId\": \"TRX-USDT\",\n        \"lastPrice\": 0.075997,\n        \"bestAskPrice\": 0.075998,\n        \"bestBidPrice\": 0.075997,\n        \"highPrice\": 0.076862,\n        \"lowPrice\": 0.074062,\n        \"changePrice\": 0.001543,\n        \"changePercentage\": 0.0207\n      }\n    ]\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "WATCHLIST_ID",
+              "value": "2",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         }
       ],
       "enabled": true,
@@ -120,6 +153,114 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "17d5a47e-1793-4972-a217-19a662f4d604",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "WalletManagement/Wallet",
+      "responses": [
+        {
+          "uuid": "51abb225-c83c-4743-940d-ce86047bed3f",
+          "body": "\n  {\n  \"data\": {\n    \"id\": 1,\n    \"customerTradingCodeId\": \"sm2020\",\n    \"updatedAt\": \"2022-10-25T17:41:22.5755908\",\n    \"withdrawable\": 9219.08,\n    \"blocked\": 280.95\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "5f279244-7864-4793-adde-6d0bbbe2b7dd",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "OrderManagement/Order",
+      "responses": [
+        {
+          "uuid": "01d20d3a-d646-45ab-9582-dfba7cdf77a2",
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 0,\n      \"customerTradingCodeId\": \"string\",\n      \"symbolId\": \"string\",\n      \"quantity\": 0,\n      \"price\": 0,\n      \"orderSide\": 1,\n      \"createdAt\": \"2023-07-28T09:07:02.400Z\",\n      \"updatedAt\": \"2023-07-28T09:07:02.400Z\",\n      \"status\": 0,\n      \"isActive\": true\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"string\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "b9faafab-073d-4aac-b228-afbc9a3dc77d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "User/CustomerInfo",
+      "responses": [
+        {
+          "uuid": "d57bb9dd-514c-409a-a87c-57c78833c5e6",
+          "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"userId\": \"abb7d9ff-adbf-4a3c-8ea9-a2f1d18845e7\",\n    \"name\": \"Saeed\",\n    \"family\": \"Aghdam\",\n    \"idNumber\": \"4920035845\",\n    \"mobileNumber\": \"0684047393\",\n    \"phoneNumber\": \"\",\n    \"country\": \"Netherlands\",\n    \"city\": \"Tilburg\",\n    \"address\": \"Broekhovenseweg 132 14\",\n    \"postalCode\": \"5021LJ\"\n  },\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "e50ba986-238b-498a-b169-a55fdc545658",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "MarketData/Symbol/Lightweight",
+      "responses": [
+        {
+          "uuid": "84e732d7-3caf-4dbe-8568-7d56e272b20d",
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 35,\n      \"symbolId\": \"VET-USDT\",\n      \"name\": \"VET-USDT\"\n    },\n    {\n      \"id\": 48,\n      \"symbolId\": \"EOS-USDT\",\n      \"name\": \"EOS-USDT\"\n    },\n    {\n      \"id\": 52,\n      \"symbolId\": \"ETC-USDT\",\n      \"name\": \"ETC-USDT\"\n    },\n    {\n      \"id\": 57,\n      \"symbolId\": \"LTC-USDT\",\n      \"name\": \"LTC-USDT\"\n    },\n    {\n      \"id\": 123,\n      \"symbolId\": \"TRX-USDT\",\n      \"name\": \"TRX-USDT\"\n    },\n    {\n      \"id\": 150,\n      \"symbolId\": \"BCH-USDT\",\n      \"name\": \"BCH-USDT\"\n    },\n    {\n      \"id\": 152,\n      \"symbolId\": \"ETH-USDT\",\n      \"name\": \"ETH-USDT\"\n    },\n    {\n      \"id\": 153,\n      \"symbolId\": \"BTC-USDT\",\n      \"name\": \"BTC-USDT\"\n    },\n    {\n      \"id\": 183,\n      \"symbolId\": \"ATOM-USDT\",\n      \"name\": \"ATOM-USDT\"\n    },\n    {\n      \"id\": 186,\n      \"symbolId\": \"FTM-USDT\",\n      \"name\": \"FTM-USDT\"\n    },\n    {\n      \"id\": 192,\n      \"symbolId\": \"CHR-USDT\",\n      \"name\": \"CHR-USDT\"\n    },\n    {\n      \"id\": 201,\n      \"symbolId\": \"BNB-USDT\",\n      \"name\": \"BNB-USDT\"\n    },\n    {\n      \"id\": 211,\n      \"symbolId\": \"XTZ-USDT\",\n      \"name\": \"XTZ-USDT\"\n    },\n    {\n      \"id\": 213,\n      \"symbolId\": \"ZEC-USDT\",\n      \"name\": \"ZEC-USDT\"\n    },\n    {\n      \"id\": 215,\n      \"symbolId\": \"ADA-USDT\",\n      \"name\": \"ADA-USDT\"\n    },\n    {\n      \"id\": 225,\n      \"symbolId\": \"CHZ-USDT\",\n      \"name\": \"CHZ-USDT\"\n    },\n    {\n      \"id\": 231,\n      \"symbolId\": \"WIN-USDT\",\n      \"name\": \"WIN-USDT\"\n    },\n    {\n      \"id\": 244,\n      \"symbolId\": \"LUNA-USDT\",\n      \"name\": \"LUNA-USDT\"\n    },\n    {\n      \"id\": 247,\n      \"symbolId\": \"SXP-USDT\",\n      \"name\": \"SXP-USDT\"\n    },\n    {\n      \"id\": 267,\n      \"symbolId\": \"KSM-USDT\",\n      \"name\": \"KSM-USDT\"\n    },\n    {\n      \"id\": 293,\n      \"symbolId\": \"WAVES-USDT\",\n      \"name\": \"WAVES-USDT\"\n    },\n    {\n      \"id\": 298,\n      \"symbolId\": \"MKR-USDT\",\n      \"name\": \"MKR-USDT\"\n    },\n    {\n      \"id\": 302,\n      \"symbolId\": \"JST-USDT\",\n      \"name\": \"JST-USDT\"\n    },\n    {\n      \"id\": 308,\n      \"symbolId\": \"LINK-USDT\",\n      \"name\": \"LINK-USDT\"\n    },\n    {\n      \"id\": 309,\n      \"symbolId\": \"DOT-USDT\",\n      \"name\": \"DOT-USDT\"\n    },\n    {\n      \"id\": 323,\n      \"symbolId\": \"YFI-USDT\",\n      \"name\": \"YFI-USDT\"\n    },\n    {\n      \"id\": 325,\n      \"symbolId\": \"UNI-USDT\",\n      \"name\": \"UNI-USDT\"\n    },\n    {\n      \"id\": 333,\n      \"symbolId\": \"FIL-USDT\",\n      \"name\": \"FIL-USDT\"\n    },\n    {\n      \"id\": 336,\n      \"symbolId\": \"AAVE-USDT\",\n      \"name\": \"AAVE-USDT\"\n    },\n    {\n      \"id\": 368,\n      \"symbolId\": \"1INCH-USDT\",\n      \"name\": \"1INCH-USDT\"\n    },\n    {\n      \"id\": 391,\n      \"symbolId\": \"REN-USDT\",\n      \"name\": \"REN-USDT\"\n    },\n    {\n      \"id\": 392,\n      \"symbolId\": \"LRC-USDT\",\n      \"name\": \"LRC-USDT\"\n    },\n    {\n      \"id\": 398,\n      \"symbolId\": \"QNT-USDT\",\n      \"name\": \"QNT-USDT\"\n    },\n    {\n      \"id\": 399,\n      \"symbolId\": \"BAT-USDT\",\n      \"name\": \"BAT-USDT\"\n    },\n    {\n      \"id\": 400,\n      \"symbolId\": \"DOGE-USDT\",\n      \"name\": \"DOGE-USDT\"\n    },\n    {\n      \"id\": 414,\n      \"symbolId\": \"MASK-USDT\",\n      \"name\": \"MASK-USDT\"\n    },\n    {\n      \"id\": 444,\n      \"symbolId\": \"AVAX-USDT\",\n      \"name\": \"AVAX-USDT\"\n    },\n    {\n      \"id\": 450,\n      \"symbolId\": \"ENJ-USDT\",\n      \"name\": \"ENJ-USDT\"\n    },\n    {\n      \"id\": 451,\n      \"symbolId\": \"MANA-USDT\",\n      \"name\": \"MANA-USDT\"\n    },\n    {\n      \"id\": 473,\n      \"symbolId\": \"ANKR-USDT\",\n      \"name\": \"ANKR-USDT\"\n    },\n    {\n      \"id\": 481,\n      \"symbolId\": \"OMG-USDT\",\n      \"name\": \"OMG-USDT\"\n    },\n    {\n      \"id\": 482,\n      \"symbolId\": \"ZIL-USDT\",\n      \"name\": \"ZIL-USDT\"\n    },\n    {\n      \"id\": 520,\n      \"symbolId\": \"SHIB-USDT\",\n      \"name\": \"SHIB-USDT\"\n    },\n    {\n      \"id\": 536,\n      \"symbolId\": \"MATIC-USDT\",\n      \"name\": \"MATIC-USDT\"\n    },\n    {\n      \"id\": 644,\n      \"symbolId\": \"NEAR-USDT\",\n      \"name\": \"NEAR-USDT\"\n    },\n    {\n      \"id\": 650,\n      \"symbolId\": \"AXS-USDT\",\n      \"name\": \"AXS-USDT\"\n    },\n    {\n      \"id\": 711,\n      \"symbolId\": \"YGG-USDT\",\n      \"name\": \"YGG-USDT\"\n    },\n    {\n      \"id\": 733,\n      \"symbolId\": \"EGLD-USDT\",\n      \"name\": \"EGLD-USDT\"\n    },\n    {\n      \"id\": 766,\n      \"symbolId\": \"FTT-USDT\",\n      \"name\": \"FTT-USDT\"\n    },\n    {\n      \"id\": 773,\n      \"symbolId\": \"TLM-USDT\",\n      \"name\": \"TLM-USDT\"\n    },\n    {\n      \"id\": 786,\n      \"symbolId\": \"C98-USDT\",\n      \"name\": \"C98-USDT\"\n    },\n    {\n      \"id\": 848,\n      \"symbolId\": \"LTO-USDT\",\n      \"name\": \"LTO-USDT\"\n    },\n    {\n      \"id\": 966,\n      \"symbolId\": \"LINA-USDT\",\n      \"name\": \"LINA-USDT\"\n    },\n    {\n      \"id\": 999,\n      \"symbolId\": \"IOTA-USDT\",\n      \"name\": \"IOTA-USDT\"\n    },\n    {\n      \"id\": 1049,\n      \"symbolId\": \"APE-USDT\",\n      \"name\": \"APE-USDT\"\n    },\n    {\n      \"id\": 1050,\n      \"symbolId\": \"GMT-USDT\",\n      \"name\": \"GMT-USDT\"\n    },\n    {\n      \"id\": 1081,\n      \"symbolId\": \"ALPINE-USDT\",\n      \"name\": \"ALPINE-USDT\"\n    },\n    {\n      \"id\": 1082,\n      \"symbolId\": \"BNX-USDT\",\n      \"name\": \"BNX-USDT\"\n    },\n    {\n      \"id\": 1093,\n      \"symbolId\": \"DAR-USDT\",\n      \"name\": \"DAR-USDT\"\n    },\n    {\n      \"id\": 1106,\n      \"symbolId\": \"CELR-USDT\",\n      \"name\": \"CELR-USDT\"\n    },\n    {\n      \"id\": 1121,\n      \"symbolId\": \"EPX-USDT\",\n      \"name\": \"EPX-USDT\"\n    },\n    {\n      \"id\": 1124,\n      \"symbolId\": \"GAL-USDT\",\n      \"name\": \"GAL-USDT\"\n    },\n    {\n      \"id\": 1161,\n      \"symbolId\": \"ACH-USDT\",\n      \"name\": \"ACH-USDT\"\n    },\n    {\n      \"id\": 1267,\n      \"symbolId\": \"XRP-USDT\",\n      \"name\": \"XRP-USDT\"\n    }\n  ],\n  \"status\": true,\n  \"errorMessage\": \"\",\n  \"errorCode\": 0\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -138,6 +279,22 @@
     {
       "type": "route",
       "uuid": "a1b7c28c-df26-4169-a896-e7575c6c8e40"
+    },
+    {
+      "type": "route",
+      "uuid": "17d5a47e-1793-4972-a217-19a662f4d604"
+    },
+    {
+      "type": "route",
+      "uuid": "5f279244-7864-4793-adde-6d0bbbe2b7dd"
+    },
+    {
+      "type": "route",
+      "uuid": "b9faafab-073d-4aac-b228-afbc9a3dc77d"
+    },
+    {
+      "type": "route",
+      "uuid": "e50ba986-238b-498a-b169-a55fdc545658"
     }
   ],
   "proxyMode": false,
