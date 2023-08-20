@@ -31,10 +31,10 @@ function Price() {
         <>
             <div className="row">
                 <div className="col-6">
-                    <h1 className={style.symbol}>{data.symbolId}</h1>
+                    <h1 className={style.symbol} data-testid="symbolId">{data.symbolId}</h1>
                     <p>
-                        <span className={style.middletxt}>{data.changePrice}</span>
-                        <span className={`${style.changePercentageText} ${style.redtxt}`}>{data.changePercentage}</span>
+                        <span className={style.middletxt} data-testid="changePrice">{data.changePrice}</span>
+                        <span className={`${style.changePercentageText} ${style.redtxt}`} data-testid="changePercentage">{data.changePercentage}</span>
                     </p>
                 </div>
                 <div className="col-6">
