@@ -26,9 +26,19 @@ test(' it should display changePercentage', async ({ page }) => {
 test(' it should display table', async ({ page }) => {
     await page.goto('http://localhost:3000/');
     const changePriceElement = page.getByTestId('price');
-    const tableRowLocators= changePriceElement.locator('tbody tr')
-    const rowCount= await tableRowLocators.count();
-    const tableCellLocators=tableRowLocators.locator('td');
-    const cellCount=await tableCellLocators.count();
+    const tableRowLocators = changePriceElement.locator('tbody tr')
+    const rowCount = await tableRowLocators.count();
+
+    const tableCellLocators = tableRowLocators.locator('td');
+    const cellCount = await tableCellLocators.count();
+
+    for (let i = 0; i < rowCount - 2; i++) {
+        const row = tableRowLocators.nth(i);
+        const secondCell = row.locator('td:nth-child(2)');
+        const secondCellText = await secondCell.textContent();
+        const parsedsecondCellText = Number(secondCellText);
+        expect(isNaN(parsedsecondCellText)).toBe(false)
+    }
     expect(rowCount).toBe(8)
+  
 })
